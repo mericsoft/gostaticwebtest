@@ -5,6 +5,7 @@ import (
 _"strings"
 "log"
 _"time"
+"os"
 
 )
 
@@ -55,7 +56,7 @@ func main() {
 	})
 	
 
-	err := http.ListenAndServe("127.0.0.10:9000", nil) // set listen port
+	err := http.ListenAndServe(":"+os.Getenv("PORT"), nil) // set listen port
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
