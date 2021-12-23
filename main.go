@@ -56,7 +56,7 @@ func main() {
 	})
 	Port:=os.Getenv("PORT")
 	s:=&http.Server{
-	  Addr: ":"+port,
+	  Addr: ":"+Port,
     	ReadTimeout: 10 * time.Minute,
     	WriteTimeout: 10 * time.Minute,
     	MaxHeaderBytes: 0,
