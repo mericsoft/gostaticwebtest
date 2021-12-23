@@ -54,9 +54,16 @@ func main() {
 
 
 	})
-	
-
-	err := http.ListenAndServe(":"+os.Getenv("PORT"), nil) // set listen port
+	Port:=os.Getenv("PORT")
+	s:=&http.server{
+	  Addr: ":"+port,
+    	ReadTimeout: 10 * time.Minute,
+    	WriteTimeout: 10 * time.Minute,
+    	MaxHeaderBytes: 0,
+	}
+	err:=s.ListenAndServe()
+		
+	//err := http.ListenAndServe(":"+os.Getenv("PORT"), nil) // set listen port
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
