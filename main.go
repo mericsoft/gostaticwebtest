@@ -4,7 +4,7 @@ import (
 "net/http"
 _"strings"
 "log"
-_"time"
+"time"
 "os"
 
 )
@@ -55,7 +55,7 @@ func main() {
 
 	})
 	Port:=os.Getenv("PORT")
-	s:=&http.server{
+	s:=&http.Server{
 	  Addr: ":"+port,
     	ReadTimeout: 10 * time.Minute,
     	WriteTimeout: 10 * time.Minute,
